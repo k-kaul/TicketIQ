@@ -5,7 +5,7 @@ import { sendMail } from "../../utils/mailer";
 
 export const onUserSignUp = inngest.createFunction(
     { id: "om-user-signup", retries:5 },
-    { event: "user/signupp" },
+    { event: "user/signup" },
 
     async ({ event,step }) => {
         try {
