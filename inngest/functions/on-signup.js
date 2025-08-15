@@ -4,12 +4,12 @@ import { NonRetriableError } from "inngest";
 import { sendMail } from "../../utils/mailer";
 
 export const onUserSignUp = inngest.createFunction(
-    { id: "om-user-signup", retries:5 },
-    { event: "user/signup" },
-
+    { id: "on-user-signup", retries:5 }, //unique identifier for the function
+    { event: "user/signup" }, //name of the event that triggers this function
+    //function logic
     async ({ event,step }) => {
         try {
-            const {email} = event.data;
+            const { email } = event.data;
             const user = await step.run('get-user-email', async() => {
                 const userObject = await User.findOne({ email });
                 if(!userObject){
