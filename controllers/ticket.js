@@ -1,7 +1,7 @@
 import {inngest} from "../inngest/client";
 import Ticket from "../models/ticket";
 
-export const createTickt = async (req, res) => {
+export const createTicket = async (req, res) => {
     try {
         const {title, description} = req.body;
         
@@ -37,7 +37,7 @@ export const createTickt = async (req, res) => {
     }
 }
 
-export const getAllTicket = async (req, res) => {
+export const getAllTickets = async (req, res) => {
     try {
         const user = req.user;
 
