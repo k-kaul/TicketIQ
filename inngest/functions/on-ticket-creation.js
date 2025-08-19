@@ -1,9 +1,9 @@
-import User from '../../models/user';
-import { inngest } from "../client";
-import Ticket from "../../models/ticket"
+import User from '../../models/user.js';
+import { inngest } from "../client.js";
+import Ticket from "../../models/ticket.js"
 import { NonRetriableError } from "inngest";
-import analyzeTicket from "../../utils/gemini";
-import { sendMail } from '../../utils/mailer';
+import analyzeTicket from "../../utils/gemini.js";
+import { sendMail } from '../../utils/mailer.js';
 
 export const onTicketCreation = inngest.createFunction(
     { id: 'on-ticket-creation', retries: 2 },
